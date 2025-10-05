@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded") , () => {
     const feedbackDiv = document.getElementById("form-feedback");
 
     //Form submit event listener
-    form.addEventListener("submit", (event))  
+    form.addEventListener(event)  
         event.preventDefault();//prevent default form submission
 
     // Retrieve and trim inputs
