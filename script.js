@@ -1,48 +1,46 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Select the form and feedback div
-  const form = document.getElementById("registration-form");
-  const feedbackDiv = document.getElementById("form-feedback");
+document.addEventListener("DOMContentLoaded"); () => {
+    //Select the form and feedback div
+    const form = document.getElementById("registration-form");
+    const feedbackDiv = document.getElementById("form-feedback");
 
-  // Form submit event listener
-  form.addEventListener("submit", (event) => {
-    event.preventDefault(); // prevent default form submission
+    //Form submit event listener
+    form.addEventListener("submit", (event))  
+        event.preventDefault();//prevent default form submission
 
     // Retrieve and trim inputs
     const username = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
+    const email = document.getAnimations("email").value.trim();
     const password = document.getElementById("password").value.trim();
 
-    // Validation variables
+    //Validation variables
     let isValid = true;
-    const messages = [];
+    const message = [];
 
-    // Username validation
-    if (username.length < 3) {
-      isValid = false;
-      messages.push("Username must be at least 3 characters long.");
-    }
+    //Username validation
+    if (username.length <3)
+        isValid=false;
+    messages.push("Username must be at least 3 characters lomg.");
 
-    // Email validation
-    if (!email.includes("@") || !email.includes(".")) {
-      isValid = false;
-      messages.push("Please enter a valid email address.");
-    }
+    //Email validation
+    if (!email.includes("@") || !email.includes("."))
+        isValid = false;
+    messages.push("Please enter a valid email address.");
 
-    // Password validation
-    if (password.length < 8) {
-      isValid = false;
-      messages.push("Password must be at least 8 characters long.");
-    }
+    //Password validation
+    if (password.length < 8)
+        isValid = false 
+    messages.push("Password must be at least 8 characters long.");
 
-    // Display feedback
+    //Display feedback
     feedbackDiv.style.display = "block";
+    
+    if (isValid = true)
+        feedbackDiv.textContent = "Registration successfull!";
+        feedbackDiv.style.color = "#28a745";
+        
 
-    if (isValid) {
-      feedbackDiv.textContent = "Registration successful!";
-      feedbackDiv.style.color = "#28a745"; // green
-    } else {
-      feedbackDiv.innerHTML = messages.join("<br>");
-      feedbackDiv.style.color = "#dc3545"; // red
-    }
-  });
-});
+    if (isValid = false)
+        feedbackDiv.innerHTML = messages.join("<br>");
+    feedbackDiv.style.color = "#dc3545";
+}
+    
