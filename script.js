@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded"); () => {
+document.addEventListener("DOMContentLoaded") , () => {
     //Select the form and feedback div
     const form = document.getElementById("registration-form");
     const feedbackDiv = document.getElementById("form-feedback");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded"); () => {
 
     // Retrieve and trim inputs
     const username = document.getElementById("username").value.trim();
-    const email = document.getAnimations("email").value.trim();
+    const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
 
     //Validation variables
