@@ -1,46 +1,53 @@
-document.addEventListener("DOMContentLoaded") , () => {
-    //Select the form and feedback div
-    const form = document.getElementById("registration-form");
-    const feedbackDiv = document.getElementById("form-feedback");
+// Start with DOMContentLoaded Event
+document.addEventListener('DOMContentLoaded', function() {
+    // Form Selection
+    const form = document.getElementById('registration-form');
+    const feedbackDiv = document.getElementById('form-feedback');
 
-    //Form submit event listener
-    form.addEventListener(event)  
-        event.preventDefault();//prevent default form submission
+    // Form Submission Event Listener
+    form.addEventListener('submit', function(event) {
+        // Prevent the form from submitting to the server
+        event.preventDefault();
 
-    // Retrieve and trim inputs
-    const username = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+        // Input Retrieval and Trimming
+        const username = document.getElementById('username').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
 
-    //Validation variables
-    let isValid = true;
-    const message = [];
+        // Initialize Validation Variables
+        let isValid = true;
+        const messages = [];
 
-    //Username validation
-    if (username.length <3)
-        isValid=false;
-    messages.push("Username must be at least 3 characters lomg.");
+        // Username Validation
+        if (username.length < 3) {
+            isValid = false;
+            messages.push('Username must be at least 3 characters long.');
+        }
 
-    //Email validation
-    if (!email.includes("@") || !email.includes("."))
-        isValid = false;
-    messages.push("Please enter a valid email address.");
+        // Email Validation
+        if (!email.includes('@') || !email.includes('.')) {
+            isValid = false;
+            messages.push('Email must contain both "@" and "." characters.');
+        }
 
-    //Password validation
-    if (password.length < 8)
-        isValid = false 
-    messages.push("Password must be at least 8 characters long.");
+        // Password Validation
+        if (password.length < 8) {
+            isValid = false;
+            messages.push('Password must be at least 8 characters long.');
+        }
 
-    //Display feedback
-    feedbackDiv.style.display = "block";
-    
-    if (isValid = true)
-        feedbackDiv.textContent = "Registration successfull!";
-        feedbackDiv.style.color = "#28a745";
+        // Displaying Feedback
+        feedbackDiv.style.display = "block";
         
-
-    if (isValid = false)
-        feedbackDiv.innerHTML = messages.join("<br>");
-    feedbackDiv.style.color = "#dc3545";
-}
+        if (isValid) {
+            // Success case
+            feedbackDiv.textContent = "Registration successful!";
+            feedbackDiv.style.color = "#28a745";
+        } else {
+            // Error case
+            feedbackDiv.innerHTML = messages.join('<br>');
+            feedbackDiv.style.color = "#dc3545";
+        }
+    });
+});
     
